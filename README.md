@@ -1,1 +1,1 @@
-# myBlogProject
+# TravelDiaryProject

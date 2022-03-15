@@ -1,0 +1,10 @@
+com/wildcodeschool/traveldiary/controllers/DestinationController.class
+com/wildcodeschool/traveldiary/TraveldiaryApplication.class
+com/wildcodeschool/traveldiary/repositories/ResourceCategoryRepository.class
+com/wildcodeschool/traveldiary/repositories/JourneyResourceRepository.class
+com/wildcodeschool/traveldiary/repositories/DestinationRepository.class
+com/wildcodeschool/traveldiary/entities/ResourceCategory.class
+com/wildcodeschool/traveldiary/entities/Journey.class
+com/wildcodeschool/traveldiary/entities/Destination.class
+com/wildcodeschool/traveldiary/repositories/JourneyRepository.class
+com/wildcodeschool/traveldiary/entities/JourneyResource.class

@@ -11,7 +11,7 @@ import {HttpErrorResponse} from "@angular/common/http";
 export class DestinationsComponent implements OnInit {
 
   panelOpenState = false;
-  destinations: Destination[] | undefined;
+  destinations?: Destination[] | undefined;
 
   // inject service into the component controller
   constructor(private destinationService: DestinationService) {
@@ -36,6 +36,28 @@ export class DestinationsComponent implements OnInit {
         alert(error.message);
       }
     );
+  }
+
+  public onOpenModal(destination: Destination, mode: string): void {
+    const button = document.createElement('button');
+    const mainContainer = document.getElementById('main-container');
+
+    button.type = 'button';
+    button.style.display = 'none';
+    button.setAttribute('data-bs-toggle', 'modal');
+    if (mode === 'create') {
+      button.setAttribute('data-bs-target', '#createDestinationModal');
+    }
+    if (mode === 'edit') {
+      button.setAttribute('data-bs-target', '#editDestinationModal');
+    }
+    if (mode === 'delete') {
+      button.setAttribute('data-bs-target', '#deleteDestinationModal');
+    }
+
+    // @ts-ignore
+    mainContainer.appendChild(button);
+    button.click();
   }
 
 }

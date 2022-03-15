@@ -1,21 +1,17 @@
 <div *ngFor="let journey of journeyList">
-  <mat-card class="col-sm-6 col-md-4 col-lg-3 mb-5">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>{{journey.city}}</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    <mat-card-content>
+  <div class="col-sm-6 col-md-4 col-lg-3 mb-5">
+    <div class="card-title">
+      <h3>{{journey.city}}</h3>
+      <p>Description</p>
+    </div>
+    <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <div class="card-body">
       <p>
         The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
         A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
         bred for hunting.
       </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card>
+    </div>
+
+  </div>
 </div>

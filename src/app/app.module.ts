@@ -13,10 +13,14 @@ import {MatCardModule} from "@angular/material/card";
 import { JourneysComponent } from './journeys/journeys.component';
 import {MatButtonModule} from "@angular/material/button";
 import {DestinationService} from "./services/destination.service";
+import { NavbarComponent } from './navbar/navbar.component';
+import { AddDestinationComponent } from './destinations/add-destination/add-destination.component';
+import { EditDestinationComponent } from './destinations/edit-destination/edit-destination.component';
 
 const appRoutes: Routes = [
   { path: 'about', component: AboutComponent},
   { path: 'destinations', component: DestinationsComponent},
+  { path: 'journeys', component: JourneysComponent},
 ];
 
 @NgModule({
@@ -25,6 +29,9 @@ const appRoutes: Routes = [
         DestinationsComponent,
         AboutComponent,
         JourneysComponent,
+        NavbarComponent,
+        AddDestinationComponent,
+        EditDestinationComponent,
     ],
   imports: [
     BrowserModule,

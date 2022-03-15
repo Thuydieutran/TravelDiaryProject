@@ -1,3 +1,48 @@
+<!--<div class="container" id="main-container">
+  <button type="button" class="btn btn-group-lg btn-secondary text-white" (click)="onOpenModal(destination, 'create')"><i class="fa fa-pencil fs-5 text-white"></i></button>
+</div>-->
+
+<!-- Create Modal -->
+<div class="modal fade" id="editDestinationModal" tabindex="-1" aria-labelledby="editDestinationModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editDestinationModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Modal -->
+<div class="modal fade" id="deleteDestinationModal" tabindex="-1" aria-labelledby="deleteDestinationModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteDestinationModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Delete Modal -->
+
+
+
 <div class="container" *ngFor="let destination of destinations">
   <mat-accordion>
     <mat-expansion-panel (opened)="panelOpenState = true"
@@ -7,10 +52,10 @@
           {{destination.country}}
         </mat-panel-title>
         <mat-panel-description class="fs-5 text-dark">
-          Destination starts: <span class="p-lg-3 fw-bold text-secondary">{{destination.destinationStart}}</span>
+          Destination starts: <span class="p-lg-3 fw-bold text-secondary">{{destination?.destinationStart}}</span>
         </mat-panel-description>
         <mat-panel-description class="fs-5 text-dark">
-          Destination ends: <span class="p-lg-3 fw-bold text-secondary">{{destination.destinationEnd}}</span>
+          Destination ends: <span class="p-lg-3 fw-bold text-secondary">{{destination?.destinationEnd}}</span>
         </mat-panel-description>
         <mat-panel-description class="flex-grow-0 btn btn-lg btn-secondary text-end">
           View details
@@ -18,11 +63,13 @@
 
       </mat-expansion-panel-header>
       <mat-panel-description class="fs-5 text-dark d-flex flex-column align-items-start">
-        <p>Description: {{destination.destinationName}}</p>
+        <p>Description: {{destination?.destinationName}}</p>
 
+        <button type="button" class="btn btn-group-lg btn-secondary text-white" (click)="onOpenModal(destination, 'edit')"><i class="fa fa-pencil fs-5 text-white"></i></button>
         <!-- Journey cards -->
         <app-journeys></app-journeys>
         <!-- Journey cards end here-->
+
       </mat-panel-description>
     </mat-expansion-panel>
   </mat-accordion>

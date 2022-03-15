@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+// Colors  -----------------------------------------------------------------------------------------------
+$primary: #770087;
+$light: #D9C4EC;
+$secondary: #ff69b4;
+$purple: #B891E3 ;
+$black: #404040;
+$white: #FBFBFA;
+$warning: #c0ca33;
+
+
+// Fonts  -----------------------------------------------------------------------------------------------
+$text-font: 'Rancho', cursive;
+$font-title: 'Space Mono', monospace;
+$font-subtitle:'Kaushan Script', cursive;
+$text-size: 24px;
+$subtitle-size: 36px;
+$title-size: 60px;
+$title-weight: 800;
+$card-height: 100%;
+$padding: 10px;
+
+// Mixins for responsive development -----------------------------------------------------------------------------------------------
+
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1300px;
+
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+$screen-sm-max: 575.98px;
+$screen-md-max: 767.98px;
+$screen-lg-max: 991.92px;
+$screen-xl-max: 1199.98px;
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1200px;
+
+@mixin sm-max {
+  @media (max-width: #{$screen-sm-max}) {
+    @content;
+  }
+}
+
+@mixin md-max {
+  @media (max-width: #{$screen-md-max}) {
+    @content;
+  }
+}
+
+@mixin lg-max {
+  @media (max-width: #{$screen-lg-max}) {
+    @content;
+  }
+}
+
+@mixin xl-max {
+  @media (max-width: #{$screen-xl-max}) {
+    @content;
+  }
+}
+
+@mixin sm-min {
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+@mixin md-min {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+@mixin lg-min {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+@mixin xl-min {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+@mixin sm-only {
+  @media (min-width: #{$screen-sm-min}) and (max-width: #{$screen-md-max}) {
+    @content;
+  }
+}
+
+@mixin md-only {
+  @media (min-width: #{$screen-md-min}) and (max-width: #{$screen-lg-max}) {
+    @content;
+  }
+}
+
+@mixin lg-only {
+  @media (min-width: #{$screen-lg-min}) and (max-width: #{$screen-xl-max}) {
+    @content;
+  }
+
+}
+
+
+/* Fix IE Only */
+@mixin ie11 {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    @content;
+  }
+}

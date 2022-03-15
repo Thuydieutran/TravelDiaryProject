@@ -1,0 +1,36 @@
+<div class="container" *ngFor="let destination of destinations">
+  <mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false" class="bg-light my-5 p-5">
+      <mat-expansion-panel-header class="d-flex flex-row">
+        <mat-panel-title class="fs-4 text-primary">
+          {{destination.country}}
+        </mat-panel-title>
+        <mat-panel-description class="fs-5 text-dark">
+          Destination starts: <span class="p-lg-3 fw-bold text-secondary">{{destination.destinationStart}}</span>
+        </mat-panel-description>
+        <mat-panel-description class="fs-5 text-dark">
+          Destination ends: <span class="p-lg-3 fw-bold text-secondary">{{destination.destinationEnd}}</span>
+        </mat-panel-description>
+        <mat-panel-description class="flex-grow-0 btn btn-lg btn-secondary text-end">
+          View details
+        </mat-panel-description>
+
+      </mat-expansion-panel-header>
+      <mat-panel-description class="fs-5 text-dark d-flex flex-column align-items-start">
+        <p>Description: {{destination.destinationName}}</p>
+
+        <!-- Journey cards -->
+        <app-journeys></app-journeys>
+        <!-- Journey cards end here-->
+      </mat-panel-description>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+</div>
+
+
+
+
+
+

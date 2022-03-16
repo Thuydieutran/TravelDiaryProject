@@ -12,7 +12,7 @@
 }
 
 .text-cursive {
-  font-family: $font-title;
+  font-family: $font-subtitle;
   font-size: 36px;
 }
 /* Style for navbar */
@@ -131,6 +131,8 @@ p, li, a {
 
 .banner h1 {
   font-weight: 800;
+  font-family: $font-title;
+  font-size: 60px;
 }
 .banner p {
   font-weight: 700;

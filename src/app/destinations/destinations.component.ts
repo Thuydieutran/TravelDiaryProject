@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Destination} from "../models/destination";
 import {DestinationService} from "../services/destination.service";
 import {HttpErrorResponse} from "@angular/common/http";
+import {Journey} from "../models/journey";
 
 @Component({
   selector: 'app-destinations',
@@ -9,7 +10,9 @@ import {HttpErrorResponse} from "@angular/common/http";
   styleUrls: ['./destinations.component.scss']
 })
 export class DestinationsComponent implements OnInit {
-
+  private journeyList: Journey[] | undefined;
+  // @ts-ignore
+  item = this.journeyList;
   panelOpenState = false;
   destinations?: Destination[] | undefined;
 
@@ -21,6 +24,7 @@ export class DestinationsComponent implements OnInit {
   // then we have to implement interface OnInIt and override a function called ngOnInIt()
   ngOnInit(): void {
     this.getAllDestinations();
+
   }
 
 

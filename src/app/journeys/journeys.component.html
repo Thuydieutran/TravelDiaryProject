@@ -1,7 +1,8 @@
+hello
 <div *ngFor="let journey of journeyList">
   <div class="col-sm-6 col-md-4 col-lg-3 mb-5">
     <div class="card-title">
-      <h3>{{journey.city}}</h3>
+      <h3>{{journey?.city}}</h3>
       <p>Description</p>
     </div>
     <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">

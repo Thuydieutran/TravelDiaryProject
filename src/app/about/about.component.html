@@ -1,40 +1,51 @@
-<div class="col-xl-7 col-md-9 col-11 mx-auto bg-purple my-5 p-3 rounded">
-  <div class="card m-b-30">
-    <div class="card-body row mb-0">
-      <div class="col-7 mb-0">
-        <div class="avatar-profession d-flex flex-row">
-          <div>
-            <a href=""><img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="" class="img-fluid rounded-circle w-60"></a>
+<div class="header-area overlay main-content">
+  <div class="col-xl-7 col-md-9 col-11 mx-auto p-3 bg-light rounded">
+    <div class="card m-b-30">
+      <div class="card-body row mb-0">
+        <div class="col-7 mb-0">
+          <div class="avatar-profession d-flex flex-row">
+            <div>
+              <a href=""><img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="" class="img-fluid rounded-circle w-60 border-5 border-primary"></a>
+            </div>
+
+            <div class="ms-3">
+              <h4 class="mt-1 mb-0 text-primary fs-5 fw-bold">{{aboutMe.firstname}} {{aboutMe.lastname}}</h4>
+              <h5 class="pt-2 fs-6 fst-italic text-secondary fw-bold">{{aboutMe.profession}}</h5>
+            </div>
+          </div>
+          <div class="profile mt-5">
+            <p class="fs-6">{{aboutMe.profile}}</p>
           </div>
 
-          <div class="ms-3">
-            <h4 class="mt-1 mb-0 text-primary fs-5 fw-bold">{{aboutMe.firstname}} {{aboutMe.lastname}}</h4>
-            <p class="pt-2 fs-6 fst-italic text-secondary">{{aboutMe.profession}}</p>
+        </div>
+        <div class="col-5 mt-3">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><i class="fa-solid fa-house-chimney-user me-3 fs-5 text-primary"></i>{{aboutMe.city}}</li>
+            <li class="list-group-item"><i class="fa fa-envelope float-right me-3 fs-5 text-primary"></i><a href="#" class="text-secondary">{{aboutMe.email}}</a></li>
+            <li class="list-group-item"><i class="fa fa-phone float-right me-3 fs-5 text-primary"></i>{{aboutMe.phone}}</li>
+          </ul>
+          <div class="btn-group btn-group-sm mt-4 mx-xl-5 mx-0">
+            <a href="#" class="btn px-3 py-2 btn-secondary tooltips" data-bs-placement="top" data-toggle="tooltip" data-bs-original-title="Edit"><i class="fa fa-pencil fs-5 text-white"></i> </a>
+            <a href="#" class="btn px-3 py-2 btn-primary tooltips" data-bs-placement="top" data-toggle="tooltip" data-bs-original-title="Delete"><i class="fa fa-trash-can fs-5 text-white"></i></a>
           </div>
         </div>
-        <div class="profile mt-5">
-          <p class="fs-6">{{aboutMe.profile}}</p>
-        </div>
-
       </div>
-      <div class="col-5 mt-3">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><i class="fa-solid fa-house-chimney-user me-3 fs-5 text-primary"></i>{{aboutMe.city}}</li>
-          <li class="list-group-item"><i class="fa fa-envelope float-right me-3 fs-5 text-primary"></i><a href="#" class="text-secondary">{{aboutMe.email}}</a></li>
-          <li class="list-group-item"><i class="fa fa-phone float-right me-3 fs-5 text-primary"></i>{{aboutMe.phone}}</li>
+      <div class="card-body">
+        <ul class="social-links list-inline my-2">
+          <li class="list-inline-item"><a title="" data-bs-placement="top" data-bs-toggle="tooltip" class="tooltips bg-secondary" href="" data-bs-original-title="Facebook"><i class="fa fa-facebook-f fs-5  text-white"></i></a></li>
+          <li class="list-inline-item"><a title="" data-bs-placement="top" data-bs-toggle="tooltip" class="tooltips bg-secondary" href="" data-bs-original-title="Twitter"><i class="fa fa-twitter fs-5  text-white"></i></a></li>
+          <li class="list-inline-item"><a title="" data-bs-placement="top" data-bs-toggle="tooltip" class="tooltips bg-secondary" href="" data-bs-original-title="Skype"><i class="fa fa-skype fs-5  text-white"></i></a></li>
         </ul>
-        <div class="btn-group btn-group-sm mt-4 mx-xl-5 mx-0">
-          <a href="#" class="btn px-3 py-2 btn-secondary tooltips" data-bs-placement="top" data-toggle="tooltip" data-bs-original-title="Edit"><i class="fa fa-pencil fs-5 text-white"></i> </a>
-          <a href="#" class="btn px-3 py-2 btn-primary tooltips" data-bs-placement="top" data-toggle="tooltip" data-bs-original-title="Delete"><i class="fa fa-times fs-5 text-white"></i></a>
-        </div>
       </div>
-    </div>
-    <div class="card-body">
-      <ul class="social-links list-inline my-2">
-        <li class="list-inline-item"><a title="" data-bs-placement="top" data-bs-toggle="tooltip" class="tooltips bg-secondary" href="" data-bs-original-title="Facebook"><i class="fa fa-facebook-f fs-5  text-white"></i></a></li>
-        <li class="list-inline-item"><a title="" data-bs-placement="top" data-bs-toggle="tooltip" class="tooltips bg-secondary" href="" data-bs-original-title="Twitter"><i class="fa fa-twitter fs-5  text-white"></i></a></li>
-        <li class="list-inline-item"><a title="" data-bs-placement="top" data-bs-toggle="tooltip" class="tooltips bg-secondary" href="" data-bs-original-title="Skype"><i class="fa fa-skype fs-5  text-white"></i></a></li>
-      </ul>
     </div>
   </div>
 </div>
+
+
+
+
+
+
+<router-outlet></router-outlet>
+
+

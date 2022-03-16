@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Destination} from "../models/destination";
 import {environment} from "../../environments/environment";
+import {Journey} from "../models/journey";
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,10 @@ export class DestinationService {
 
   public getDestinations(): Observable<Destination[]> {
     return this.http.get<Destination[]>(`${this.apiUrl}/destinations/all`);
+  }
+
+  public getDestinationById(destinationId: Destination): Observable<Journey[]> {
+    return this.http.get<Journey[]>(`${this.apiUrl}/destinations/${destinationId}/journeys`);
   }
 
   public addDestination(destination: Destination): Observable<Destination> {

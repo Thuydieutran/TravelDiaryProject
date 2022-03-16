@@ -1,72 +1,48 @@
 <!--<div class="container" >
   <button type="button" class="btn btn-group-lg btn-secondary text-white" (click)="onOpenModal(destination, 'create')"><i class="fa fa-pencil fs-5 text-white"></i></button>
 </div>-->
+<div class="header-area overlay main-content">
+  <div class="col-md-9 col-11 mx-auto p-3 bg-light" style="border-radius:10px;">
+    <h2 class="text-center text-primary fw-bold my-5">Discover my adventures</h2>
+    <div class="container destination-accordion" *ngFor="let destination of destinations" id="main-container">
+      <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false" class="bg-purple my-5 p-5">
+          <mat-expansion-panel-header class="d-flex flex-row">
+            <mat-panel-title >
+              <p class="fw-bold text-warning text-cursive">{{destination.country}}
+            </mat-panel-title>
+            <mat-panel-description class="fs-5 text-white">
+              <p>Destination starts: <span class="p-lg-3 fw-bold fst-italic text-secondary">{{destination?.destinationStart}}</span><p>
+            </mat-panel-description>
+            <mat-panel-description class="fs-5 text-white">
+              <p>Destination ends: <span class="p-lg-3 fw-bold fst-italic text-secondary">{{destination?.destinationEnd}}</span></p>
+            </mat-panel-description>
+            <a class="flex-grow-0 btn btn-secondary text-white fw-bold mx-2 align-self-center" routerLink="/destinations/journeys">
+              View my journeys
+            </a>
 
-<div class="container" *ngFor="let destination of destinations" id="main-container">
-  <mat-accordion>
-    <mat-expansion-panel (opened)="panelOpenState = true"
-                         (closed)="panelOpenState = false" class="bg-light my-5 p-5">
-      <mat-expansion-panel-header class="d-flex flex-row">
-        <mat-panel-title class="fs-4 text-primary">
-          {{destination.country}}
-        </mat-panel-title>
-        <mat-panel-description class="fs-5 text-dark">
-          Destination starts: <span class="p-lg-3 fw-bold text-secondary">{{destination?.destinationStart}}</span>
-        </mat-panel-description>
-        <mat-panel-description class="fs-5 text-dark">
-          Destination ends: <span class="p-lg-3 fw-bold text-secondary">{{destination?.destinationEnd}}</span>
-        </mat-panel-description>
-        <mat-panel-description class="flex-grow-0 btn btn-lg btn-secondary text-end">
-          View details
-        </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-panel-description class="text-white d-flex flex-column align-items-start">
+            <p class="fs-5" >Description: {{destination?.destinationName}}</p>
+            <div class="d-flex flex-row justify-content-start">
+              <button type="button" class="btn btn-group-lg btn-secondary text-white me-2 px-3 py-2" (click)="onOpenModal(destination, 'edit')"><i class="fa fa-pencil fs-5 text-white"></i></button>
+              <button type="button" class="btn btn-group-lg btn-warning text-white px-3 py-2" (click)="onOpenModal(destination, 'delete')"><i class="fa fa-trash fs-5 text-white"></i></button>
 
-      </mat-expansion-panel-header>
-      <mat-panel-description class="fs-5 text-dark d-flex flex-column align-items-start">
-        <p>Description: {{destination?.destinationName}}</p>
+            </div>
 
-        <button type="button" class="btn btn-group-lg btn-secondary text-white" (click)="onOpenModal(destination, 'edit')"><i class="fa fa-pencil fs-5 text-white"></i></button>
-        <!-- Journey cards -->
-        <app-journeys></app-journeys>
-        <!-- Journey cards end here-->
 
-      </mat-panel-description>
-    </mat-expansion-panel>
-  </mat-accordion>
+            <!-- Sharing the infos of component: Journey cards into the parent component Destinations -->
+            <app-journeys [journeyList]="item"></app-journeys>
+            <!-- Journey cards end here-->
 
-</div>
+          </mat-panel-description>
+        </mat-expansion-panel>
+      </mat-accordion>
 
-<!--&lt;!&ndash; Create Modal &ndash;&gt;
-<div class="modal fade" id="createDestinationModal" tabindex="-1" aria-labelledby="createDestinationModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="createDestinationModalLabel">Create new destination</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="country" class="form-label">Country</label>
-            <input type="text" class="form-control" id="country">
-          </div>
-          &lt;!&ndash;<div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-          </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-          </div>&ndash;&gt;
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
     </div>
   </div>
-</div>-->
+</div>
 
 <!-- Edit Modal -->
 <div class="modal fade" id="editDestinationModal" tabindex="-1" aria-labelledby="editDestinationModalLabel" aria-hidden="true">
@@ -86,8 +62,6 @@
     </div>
   </div>
 </div>
-
-
 
 
 

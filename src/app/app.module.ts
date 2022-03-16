@@ -16,11 +16,29 @@ import {DestinationService} from "./services/destination.service";
 import { NavbarComponent } from './navbar/navbar.component';
 import { AddDestinationComponent } from './destinations/add-destination/add-destination.component';
 import { EditDestinationComponent } from './destinations/edit-destination/edit-destination.component';
+import { BannerComponent } from './banner/banner.component';
+import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './footer/footer.component';
 
 const appRoutes: Routes = [
+  { path: '', component: HomeComponent},
   { path: 'about', component: AboutComponent},
-  { path: 'destinations', component: DestinationsComponent},
-  { path: 'journeys', component: JourneysComponent},
+  { path: 'destinations', component: DestinationsComponent,
+    children: [
+      {
+        path: 'journeys', // child route path
+        component: JourneysComponent // child route component that the router renders
+      },
+      {
+        path: 'create',
+        component: AddDestinationComponent,
+      },
+      {
+        path: 'edit',
+        component: EditDestinationComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
@@ -32,6 +50,9 @@ const appRoutes: Routes = [
         NavbarComponent,
         AddDestinationComponent,
         EditDestinationComponent,
+        BannerComponent,
+        HomeComponent,
+        FooterComponent,
     ],
   imports: [
     BrowserModule,

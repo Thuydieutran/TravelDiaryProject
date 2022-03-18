@@ -1,11 +1,11 @@
 <!--<div class="container" >
   <button type="button" class="btn btn-group-lg btn-secondary text-white" (click)="onOpenModal(destination, 'create')"><i class="fa fa-pencil fs-5 text-white"></i></button>
 </div>-->
-<div class="header-area overlay main-content">
-  <div class="col-md-9 col-11 mx-auto p-3 bg-light" style="border-radius:10px;">
+<div class="main-content">
+  <div class="col-md-9 col-11 mx-auto p-3 bg-light rounded" >
     <h2 class="text-center text-primary fw-bold my-5">Discover my adventures</h2>
-    <div class="container destination-accordion" *ngFor="let destination of destinations" id="main-container">
-      <mat-accordion>
+    <mat-accordion class="container destination-accordion" *ngFor="let destination of destinations" id="main-container" [class.selected]="destination === selectedDestination" (click)="onSelect(destination)">
+      <!--<mat-accordion class="overflow-auto">-->
         <mat-expansion-panel (opened)="panelOpenState = true"
                              (closed)="panelOpenState = false" class="bg-purple my-5 p-5">
           <mat-expansion-panel-header class="d-flex flex-row">
@@ -33,14 +33,12 @@
 
 
             <!-- Sharing the infos of component: Journey cards into the parent component Destinations -->
-            <app-journeys [journeyList]="item"></app-journeys>
+         <!--   <app-journeys [journeyList]="journeys"></app-journeys>-->
             <!-- Journey cards end here-->
 
           </mat-panel-description>
         </mat-expansion-panel>
       </mat-accordion>
-
-    </div>
   </div>
 </div>
 

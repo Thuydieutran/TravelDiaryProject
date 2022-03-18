@@ -58,9 +58,9 @@ p, li, a {
 }
 .button-primary:hover {
   color: $secondary;
-  text-decoration: none;
 }
-.button-primary::after {
+
+.button-primary::after{
   content: '';
   position: absolute;
   bottom: 0;
@@ -68,7 +68,6 @@ p, li, a {
   right: 0;
   top: 0;
   background-color: $white;
-  border-radius: 4px;
   opacity: 0;
   -webkit-transform: scaleX(0.8);
   -ms-transform: scaleX(0.8);
@@ -76,7 +75,8 @@ p, li, a {
   transition: all 0.3s ease-in;
   z-index: -1;
 }
-.button-primary:hover::after {
+
+.button-primary:hover::after{
   opacity: 1;
   -webkit-transform: scaleX(1);
   -ms-transform: scaleX(1);
@@ -85,7 +85,6 @@ p, li, a {
 
 .button-purple:hover {
   background-color: $secondary;
-  text-decoration: none;
 }
 
 .button-purple :hover::after {
@@ -94,6 +93,28 @@ p, li, a {
   -ms-transform: scaleX(1);
   transform: scaleX(1);
 }
+
+.button-pink {
+  background-color: $secondary;
+  color: $white;
+  border-radius: 50%;
+  transition: color 0.3s ease-in;
+}
+
+.button-pink:hover {
+  color: $secondary;
+  background-color: $white;
+  border: 3px solid $secondary;
+  transition: color 0.3s ease-in;
+}
+
+.button-pink :hover::after {
+  opacity: 1;
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
 /*
 .overlay::after {
   content: '';
@@ -127,6 +148,7 @@ p, li, a {
 
 .main-content{
   padding-top: 20vh;
+  padding-bottom: 10vh;
 }
 
 .banner h1 {
@@ -385,10 +407,8 @@ p, li, a {
 }
 
 .social-links li a {
-  -webkit-border-radius: 50%;
-  background-color: $primary;
+ /* -webkit-border-radius: 50%;*/
   border-radius: 50%;
-  color: $light;
   display: inline-block;
   height: 40px;
   line-height: 40px;
@@ -396,6 +416,55 @@ p, li, a {
   width: 40px;
   font-size: 12px;
 }
+
 a {
   color: $black;
 }
+
+/* Destination accordion */
+
+.destination-accordion.selected {
+  background-color: $warning;
+  color: $secondary;
+}
+
+.destination-accordion.selected:hover {
+  background-color: $secondary;
+  color: $white;
+}
+
+.destination-accordion.selected:active {
+  background-color: $purple;
+  color: $dark;
+}
+
+
+/*.destination-accordion:hover {
+  color: $secondary;
+  text-decoration: none;
+}*/
+/*
+
+.destination-accordion::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: $white;
+  border-radius: 4px;
+  opacity: 0;
+  -webkit-transform: scaleX(0.8);
+  -ms-transform: scaleX(0.8);
+  transform: scaleX(0.8);
+  transition: all 0.3s ease-in;
+  z-index: -1;
+}
+.destination-accordion:hover::after {
+  opacity: 1;
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+}
+*/

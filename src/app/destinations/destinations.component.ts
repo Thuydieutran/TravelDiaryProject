@@ -10,11 +10,12 @@ import {Journey} from "../models/journey";
   styleUrls: ['./destinations.component.scss']
 })
 export class DestinationsComponent implements OnInit {
-  private journeyList: Journey[] | undefined;
+  selectedDestination?: Destination;
+  private journeyList?: Journey[];
   // @ts-ignore
   item = this.journeyList;
   panelOpenState = false;
-  destinations?: Destination[] | undefined;
+  destinations?: Destination[];
 
   // inject service into the component controller
   constructor(private destinationService: DestinationService) {
@@ -31,6 +32,7 @@ export class DestinationsComponent implements OnInit {
   // Since this method is unobservable so it's gonna make a request over the network and that will take some times, thats why it return unobseravle
   // So we need to "subscribe" to this observable, so after we call the function, we have to call "subscribe"
   // so we can be notified whenever some datas come back from the server either that could be the actual destinations that we requested or some kind of errors
+
   public getAllDestinations():void {
     this.destinationService.getDestinations().subscribe(
       (response: Destination[]) => {
@@ -64,4 +66,7 @@ export class DestinationsComponent implements OnInit {
     button.click();
   }
 
+  onSelect(destination: Destination) {
+    this.selectedDestination = destination;
+  }
 }
